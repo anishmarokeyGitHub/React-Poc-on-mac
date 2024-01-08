@@ -1,7 +1,9 @@
 //PascalCase
 function Message() {
     //Jsx syntax :- Javascript XML
-    return <h1> Hello World</h1>;
+
+    const name = 'Anish'
+    return <h1> Hello {name} </h1>;
 }
 
 export default Message;

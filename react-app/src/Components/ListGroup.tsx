@@ -2,9 +2,10 @@ import { Fragment, useState } from "react";
 interface Props {
   listCity: string[];
   heading: string;
+  onSelectItem: (listCity: string) => void;
 }
 
-function ListGroup({ listCity, heading }: Props) {
+function ListGroup({ listCity, heading, onSelectItem }: Props) {
   //Hook - function that help react to understand.
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -21,7 +22,10 @@ function ListGroup({ listCity, heading }: Props) {
                 : "list-group-item"
             }
             key={item}
-            onClick={() => setSelectedIndex(index)}
+            onClick={() => {
+              setSelectedIndex(index);
+              onSelectItem(item);
+            }}
           >
             {item}
           </li>
